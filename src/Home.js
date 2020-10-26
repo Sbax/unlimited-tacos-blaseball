@@ -1,17 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Main from './components/Main';
+import Roster from './components/Roster';
 import { Splash as DefaultSplash } from './components/Splash';
 import { device, fontFamily } from './theme/theme';
 
 const Splash = styled(DefaultSplash)`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  @media ${device.tablet} {
-    flex-direction: row;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 4fr 1fr;
 `;
 
 const Section = styled.section`
@@ -22,10 +19,13 @@ const Section = styled.section`
   }
 `;
 
+const LowerSection = styled(Section)`
+  grid-column: 1 / span 2;
+`;
+
 const Subtitle = styled.p`
   font-size: 1.5rem;
   font-family: ${fontFamily.display};
-  margin-top: 3rem;
   margin-bottom: 0.5rem;
 
   opacity: 0.5;
@@ -66,6 +66,9 @@ const Home = () => {
           </Twitter>
         </Section>
         <Section></Section>
+        <LowerSection>
+          <Roster />
+        </LowerSection>
       </Splash>
     </Main>
   );

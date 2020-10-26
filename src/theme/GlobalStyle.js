@@ -31,14 +31,6 @@ const GlobalStyle = createGlobalStyle`
       opacity: .75;
     }
   }
-
-  b, strong {
-    font-weight: bold;
-  }
-
-  i {
-    font-style: italic;
-  }
 `;
 
 export default GlobalStyle;

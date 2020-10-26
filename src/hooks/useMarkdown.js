@@ -22,6 +22,5 @@ export function useMarkdown(slug) {
     }
   }, [slug]);
 
-  console.log(loading, markdown);
   return [loading, markdown];
 }
